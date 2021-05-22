@@ -4,7 +4,28 @@
 	<title>flask hello world</title>
 </head>
 <body>
-<button>click here</button>
-{{ message }}
+<!--<p type="submit" href="/hi" name="action1"> click here </p> -->
+<!--<form action="/hi">
+    <input type="submit" value="Go to Google" />
+</form>-->
+<table style="width:50%">
+  <tr>
+    <th>machine</th>
+    <!--<th>status</th>-->
+    <th>action</th>
+  </tr>
+  {% for machine in machines %}
+  <tr>
+    <td>{{machines[machine].name}}</td>
+    <td>
+                {% if machines[machine].state == "OFF" %}
+                <a href="/{{machine}}/off"> Turn Off</a> 
+                {% else %}
+                <a href="/{{machine}}/on">Turn On</a> 
+                {% endif %}
+    </td>
+  </tr>
+     {% endfor %}
+</table>
 </body>
 </html>>
