@@ -42,5 +42,5 @@ def hola(machine,status):
 	template = {'machines':machines}
 	return render_template("index.html", **template,hello="after clicking");
 
-if __name__ == "__main__":
+def run_my_project():
     app.run()
