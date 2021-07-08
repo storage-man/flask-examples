@@ -22,6 +22,5 @@ def get_temperature():
 		if array[0] == "temperature":
 			temp = int(array[1])
 	return temp
-while True:
-	print(get_temperature())
+
 

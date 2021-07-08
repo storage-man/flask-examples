@@ -1,15 +1,14 @@
 import threading
+import serial
 import time as t
-def print_cube(num):
-    """
-    function to print cube of given num
-    """
-    i=0
-    while i < 100:
-        t.sleep(1)
-        print("Cube: {}".format(num * num * num))
-        i=i+1
-def print_square(num):
+from serial_program import *
+ser = serial.Serial('/dev/ttyACM0', 115200, timeout=1)
+ser.flush()
+timeout = 2
+
+def serial(num):
+    print(get_temperature())
+def server_gpio(num):
     """
     function to print square of given num
     """
@@ -21,8 +20,8 @@ def print_square(num):
   
 if __name__ == "__main__":
     # creating thread
-    t1 = threading.Thread(target=print_square, args=(10,))
-    t2 = threading.Thread(target=print_cube, args=(10,))
+    t1 = threading.Thread(target=serial, args=(10,))
+    t2 = threading.Thread(target=server_gpio, args=(10,))
   
     # starting thread 1
     t1.start()
