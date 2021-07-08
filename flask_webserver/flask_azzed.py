@@ -51,5 +51,5 @@ def hello2():
     line_values=values
     template = {'machines':machines}
     return render_template('index.html',**template)
-if __name__ == "__main__":
+def run_my_project():
     app.run()
