@@ -8,7 +8,13 @@ ser.flush()
 timeout = 2
 
 def serial(num):
-    print(get_temperature())
+	temp = 0
+	luminosite = 0
+	humidite = 0
+	while True :
+		t.sleep(0.5)
+		temp = get_temperature()[0]
+		print(temp)
 def server_gpio(num):
     run_my_project()
   
